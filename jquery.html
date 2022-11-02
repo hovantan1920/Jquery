@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <div>
+    <form>
+        <label for="fname">Nhập văn bản:</label><br>
+        <input type="text" id="input"><br>
+      </form>
+    </div>
+      <button id="btn">Xáo</button>
+
+      <p class="text"></p>
+
+</body>
+
+<script>
+    $(function(){
+        $("#btn").click(function(){
+            var source = $("#input").val();
+            var splittedSource = source.split(' ');
+            var mix = splittedSource.sort(function(){
+                return 0.5 - Math.random()});
+            var join = mix.join(' ');
+            $('.text').text(join);
+            // console.log(join);
+      });
+    });
+    </script>
+
+</html>
